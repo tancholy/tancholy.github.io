@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#101d3d">
+  <meta name="description" content="Frostiee OS — your personal creative headquarters.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="style.css">
+  <title>Frostiee OS</title>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#" aria-label="Frostiee OS home"><span class="brand-mark">F</span><span>Frostiee<span class="brand-light"> OS</span></span></a>
+      <div class="workspace-label">WORKSPACE</div>
+      <nav class="nav" aria-label="Main navigation">
+        <button class="nav-item active" data-view="home"><span>⌂</span> Home</button>
+        <button class="nav-item" data-view="tasks"><span>✓</span> Tasks <i id="task-count">0</i></button>
+        <button class="nav-item" data-view="notes"><span>▤</span> Second Brain</button>
+        <button class="nav-item" data-view="bookmarks"><span>↗</span> Bookmarks</button>
+        <button class="nav-item" data-view="projects"><span>◇</span> Projects</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="mini-card"><span class="mini-orb"></span><div><b>Frostiee OS Alpha</b><small>Local-first preview</small></div></div>
+        <button class="nav-item" data-view="settings"><span>⚙</span> Settings</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobile-menu" aria-label="Open navigation">☰</button>
+        <div class="breadcrumb">Your space <span>/</span> <b id="crumb">Home</b></div>
+        <div class="top-actions">
+          <label class="search"><span>⌕</span><input id="global-search" type="search" placeholder="Search your space..." autocomplete="off"></label>
+          <div class="avatar" title="Tymofii">T</div>
+        </div>
+      </header>
+      <section class="content" id="content" aria-live="polite"></section>
+      <footer class="footer"><span>FROSTIEE OS <b>0.1.0 ALPHA</b></span><span>Made for ideas that go places <span class="footer-star">✦</span></span></footer>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
