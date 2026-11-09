@@ -1,140 +1,42 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#101d3d">
-  <meta name="description" content="Frostiee OS — your personal creative headquarters.">
-  <link rel="manifest" href="manifest.webmanifest">
-  <link rel="stylesheet" href="style.css">
-  <style>
-:root{--ink:#17191f;--muted:#777b84;--paper:#f4f3ee;--white:#fff;--blue:#2455d6;--blue2:#dce6ff;--orange:#f0784b;--line:#d9d8d1;--green:#46745c}
-*{box-sizing:border-box}
-html,body{margin:0;min-height:100%;background:var(--paper);color:var(--ink)}
-body{font:14px/1.5 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
-button,input,textarea{font:inherit}button{cursor:pointer}
-.app-shell{min-height:100vh;display:block}
-.sidebar{height:auto;min-height:0;position:relative;top:auto;padding:0 clamp(18px,4vw,64px);background:var(--white);border:0;border-bottom:1px solid var(--ink);display:flex;flex-direction:row;align-items:center;gap:34px}
-.brand{display:flex;align-items:center;gap:9px;color:var(--ink);text-decoration:none;font-size:20px;font-weight:850;letter-spacing:-1.2px;padding:17px 0}
-.brand-mark{width:29px;height:29px;display:grid;place-items:center;background:var(--blue);color:#fff;border-radius:50%;font-size:15px;font-weight:850}
-.brand-light{color:var(--blue);font-weight:850}
-.workspace-label{display:none}
-.nav{display:flex;align-items:center;gap:3px;flex:1}
-.nav-item{border:0;background:transparent;color:#777b84;text-align:left;padding:10px 12px;border-radius:3px;display:flex;align-items:center;gap:7px;font-size:12px;font-weight:650;white-space:nowrap}
-.nav-item span{font-size:14px;width:auto;color:inherit}
-.nav-item:hover{background:#f0f1f6;color:var(--blue)}
-.nav-item.active{background:var(--blue);color:#fff;box-shadow:none}
-.nav-item i{font-style:normal;margin-left:2px;font-size:10px;background:#ffffff2a;padding:1px 5px;border-radius:2px}
-.sidebar-bottom{margin:0 0 0 auto;display:flex;align-items:center;gap:10px}
-.mini-card{display:none}
-.sidebar-bottom .nav-item{padding:9px 11px}
-.main{min-width:0;display:flex;flex-direction:column}
-.topbar{height:55px;padding:0 clamp(18px,4vw,64px);border-bottom:1px solid var(--line);background:#eeede7;display:flex;align-items:center;justify-content:space-between;position:relative;top:auto;z-index:3}
-.breadcrumb{color:#85858a;font-size:11px}.breadcrumb span{padding:0 7px;color:#b6b4ad}.breadcrumb b{color:var(--ink);font-weight:750}
-.top-actions{display:flex;align-items:center;gap:12px}
-.search{width:230px;height:32px;border:1px solid #cbc9c1;background:transparent;border-radius:3px;display:flex;align-items:center;padding:0 9px;gap:7px;color:#85858a}
-.search span{font-size:17px}.search input{border:0;outline:0;background:transparent;width:100%;font-size:11px;color:var(--ink)}
-.avatar{width:27px;height:27px;display:grid;place-items:center;border-radius:50%;background:var(--orange);color:#fff;font-size:11px;font-weight:800}
-.mobile-menu{display:none;border:0;background:transparent;font-size:21px;color:var(--ink)}
-.content{width:min(1280px,100%);margin:0 auto;padding:42px clamp(18px,4vw,64px) 60px;flex:1}
-.eyebrow{font-size:9px;font-weight:850;letter-spacing:1.8px;color:var(--blue);text-transform:uppercase}
-.page-title{font:850 clamp(30px,4vw,48px)/1.02 Inter,-apple-system,sans-serif;letter-spacing:-2.5px;margin:10px 0 8px;color:var(--ink)}
-.subtitle{color:#777b84;margin:0;line-height:1.65;font-size:13px}
-.hero{position:relative;overflow:hidden;background:var(--blue);border-radius:3px;padding:35px 38px;color:#fff;box-shadow:none;margin:27px 0 24px;min-height:220px}
-.hero:after{content:"F";position:absolute;right:6%;top:-65px;font:900 280px/.9 Georgia,serif;color:#ffffff18;transform:rotate(-9deg);pointer-events:none}
-.hero .eyebrow{color:#dce6ff}
-.hero h1{font:850 clamp(28px,4vw,46px)/.98 Inter,-apple-system,sans-serif;letter-spacing:-2px;margin:13px 0 12px;max-width:610px;position:relative;z-index:1}
-.hero p{color:#e8edff;margin:0;max-width:500px;line-height:1.6;font-size:13px;position:relative;z-index:1}
-.hero-actions{display:flex;gap:8px;margin-top:23px;position:relative;z-index:1}
-.btn{border:1px solid var(--ink);border-radius:3px;padding:10px 14px;background:var(--ink);color:#fff;font-weight:750;font-size:11px}
-.btn:hover{background:#343841;border-color:#343841}
-.btn.secondary{background:transparent;color:#fff;border-color:#ffffff99}
-.section-head{display:flex;align-items:end;justify-content:space-between;margin:27px 0 12px}
-.section-head h2{font:800 18px Inter,-apple-system,sans-serif;margin:0;letter-spacing:-.6px;color:var(--ink)}
-.text-btn{border:0;background:transparent;color:var(--blue);font-weight:800;font-size:11px}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--ink);background:var(--white)}
-.stat{padding:16px 19px;min-height:96px;border:0;border-right:1px solid var(--ink);border-radius:0;box-shadow:none;background:transparent}
-.stat:last-child{border-right:0}
-.stat-label{color:#777b84;font-size:9px;font-weight:850;letter-spacing:1px}
-.stat-value{font:850 32px/.95 Inter,-apple-system,sans-serif;margin-top:9px;color:var(--blue);letter-spacing:-1.5px}
-.stat-note{font-size:10px;color:#999ba0;margin-top:4px}
-.two-col{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;margin-top:23px}
-.panel{padding:19px 0;background:transparent;border:0;border-top:2px solid var(--ink);border-radius:0;box-shadow:none}
-.panel h3{font:800 17px Inter,-apple-system,sans-serif;margin:0 0 15px;letter-spacing:-.5px}
-.empty{border:1px dashed #c9c8c1;border-radius:2px;padding:22px;text-align:center;color:#898b8f;font-size:11px;line-height:1.6}
-.empty strong{display:block;color:#343943;font-size:12px;font-weight:750;margin-bottom:3px}
-.task-list{display:grid;gap:0}
-.task-row{display:flex;gap:10px;align-items:center;padding:11px 8px;border-bottom:1px solid #deddd7;background:transparent}
-.task-row input{accent-color:var(--blue);width:14px;height:14px}
-.task-row span{font-size:12px;flex:1}.task-row.done span{text-decoration:line-through;color:#9aa1a5}
-.task-tag{font-size:9px;color:var(--blue);background:var(--blue2);padding:3px 6px;border-radius:2px}
-.quick-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--ink);border-left:1px solid var(--ink)}
-.quick{border:0;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);background:var(--white);padding:15px;text-align:left;color:var(--ink);border-radius:0}
-.quick:hover{background:var(--blue2)}
-.quick span{display:block;font-size:19px;color:var(--orange);margin-bottom:9px}
-.quick b{font-size:12px;font-weight:800}.quick small{display:block;color:#858990;font-size:10px;margin-top:3px}
-.view-head{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:24px}
-.view-head .btn{white-space:nowrap;background:var(--blue);border-color:var(--blue)}
-.form-row{display:flex;gap:8px;margin:13px 0}
-.field{width:100%;border:1px solid #c9c8c1;background:#fff;border-radius:2px;padding:11px 12px;outline:none;color:var(--ink);font-size:12px}
-.field:focus{border-color:var(--blue);box-shadow:0 0 0 2px #2455d620}
-.note-grid,.bookmark-grid,.project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.item-card{padding:17px;background:#fff;border:1px solid var(--ink);border-radius:2px;box-shadow:none}
-.item-card h3{font:800 16px Inter,-apple-system,sans-serif;margin:0 0 8px;letter-spacing:-.5px}
-.item-card p{font-size:12px;color:#777b84;line-height:1.65;white-space:pre-wrap;margin:0 0 12px}
-.item-meta{display:flex;align-items:center;justify-content:space-between;color:#999ba0;font-size:10px}
-.delete{border:0;background:transparent;color:#858990;font-size:10px}.delete:hover{color:#bd4e3d}
-.bookmark-url{color:var(--blue);font-size:11px;overflow-wrap:anywhere}
-.project-card{padding:18px;background:#fff;border:1px solid var(--ink);border-radius:2px;position:relative;overflow:hidden;box-shadow:none}
-.project-card:before{content:"";position:absolute;width:5px;inset:0 auto 0 0;background:var(--orange)}
-.project-icon{width:32px;height:32px;border-radius:2px;background:var(--blue2);display:grid;place-items:center;color:var(--blue);margin-bottom:13px}
-.project-card h3{font:800 16px Inter,-apple-system,sans-serif;margin:0 0 5px;letter-spacing:-.5px}
-.project-card p{font-size:11px;color:#777b84;margin:0;line-height:1.6}
-.settings-card{max-width:700px}
-.notice{padding:14px 15px;border-radius:2px;background:#fff1e9;border:1px solid #efc6b4;color:#81513d;font-size:11px;line-height:1.65;margin-top:16px}
-.notice strong{display:block;margin-bottom:4px}
-.footer{border-top:1px solid var(--ink);padding:15px clamp(18px,4vw,64px);display:flex;justify-content:space-between;color:#898b8f;font-size:9px;letter-spacing:.8px}
-.footer b{color:var(--blue);margin-left:5px}.footer-star{color:var(--orange)}
-.toast{position:fixed;bottom:22px;left:50%;transform:translate(-50%,15px);opacity:0;background:var(--ink);color:#fff;padding:10px 14px;border-radius:3px;font-size:11px;box-shadow:none;transition:.2s;pointer-events:none;z-index:20}
-.toast.show{opacity:1;transform:translate(-50%,0)}
-@media(max-width:800px){.sidebar{gap:15px;padding-inline:16px}.brand{font-size:17px}.nav-item{padding:9px 8px;font-size:11px}.content{padding:30px 22px}.two-col{grid-template-columns:1fr}}
-@media(max-width:620px){.sidebar{display:block;padding:0 15px}.brand{padding:13px 0 9px}.nav{overflow-x:auto;padding-bottom:10px;gap:3px}.nav-item{flex:0 0 auto}.sidebar-bottom{display:none}.topbar{height:49px;padding:0 15px}.mobile-menu{display:none}.breadcrumb{font-size:10px;flex:1}.search{width:34px;border:0;background:transparent;padding:0}.search input{width:0;opacity:0}.search:focus-within{width:145px;border:1px solid var(--line);background:#fff;padding:0 8px}.search:focus-within input{width:100%;opacity:1}.content{padding:25px 15px 35px}.hero{padding:25px 20px;min-height:0}.hero:after{right:-20px;opacity:.8}.stats{grid-template-columns:repeat(3,1fr)}.stat{padding:12px 10px;min-height:78px}.stat-value{font-size:25px}.stat-label{font-size:8px}.stat-note{font-size:8px}.note-grid,.bookmark-grid,.project-grid{grid-template-columns:1fr}.view-head{align-items:flex-start}.view-head .btn{padding:9px}.footer{padding:13px 15px;font-size:8px;gap:8px}.footer span:last-child{text-align:right}.form-row{flex-direction:column}.quick-grid{gap:0}}
-
-  </style>
-  <title>Frostiee OS</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101a2d">
+<meta name="description" content="Frostiee OS — a personal creative workspace.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="style.css">
+<title>Frostiee OS — Workspace</title>
 </head>
 <body>
-  <div class="app-shell">
-    <aside class="sidebar" id="sidebar">
-      <a class="brand" href="#" aria-label="Frostiee OS home"><span class="brand-mark">F</span><span>Frostiee<span class="brand-light"> OS</span></span></a>
-      <div class="workspace-label">WORKSPACE</div>
-      <nav class="nav" aria-label="Main navigation">
-        <button class="nav-item active" data-view="home"><span>⌂</span> Home</button>
-        <button class="nav-item" data-view="tasks"><span>✓</span> Tasks <i id="task-count">0</i></button>
-        <button class="nav-item" data-view="notes"><span>▤</span> Second Brain</button>
-        <button class="nav-item" data-view="bookmarks"><span>↗</span> Bookmarks</button>
-        <button class="nav-item" data-view="projects"><span>◇</span> Projects</button>
-      </nav>
-      <div class="sidebar-bottom">
-        <div class="mini-card"><span class="mini-orb"></span><div><b>Frostiee OS Alpha</b><small>Local-first preview</small></div></div>
-        <button class="nav-item" data-view="settings"><span>⚙</span> Settings</button>
-      </div>
-    </aside>
-
-    <main class="main">
-      <header class="topbar">
-        <button class="mobile-menu" id="mobile-menu" aria-label="Open navigation">☰</button>
-        <div class="breadcrumb">Your space <span>/</span> <b id="crumb">Home</b></div>
-        <div class="top-actions">
-          <label class="search"><span>⌕</span><input id="global-search" type="search" placeholder="Search your space..." autocomplete="off"></label>
-          <div class="avatar" title="Tymofii">T</div>
-        </div>
-      </header>
-      <section class="content" id="content" aria-live="polite"></section>
-      <footer class="footer"><span>FROSTIEE OS <b>0.1.0 ALPHA</b></span><span>Made for ideas that go places <span class="footer-star">✦</span></span></footer>
-    </main>
+<div class="app-shell">
+<aside class="sidebar" id="sidebar">
+  <a class="brand" href="#" data-go="home"><span class="brand-mark">f.</span><span>frostiee<span class="brand-light">OS</span></span></a>
+  <div class="workspace-switch"><span class="workspace-icon">✳</span><span><b>Personal workspace</b><small>YOUR CREATIVE HQ</small></span><span class="switch-arrow">⌄</span></div>
+  <div class="nav-label">WORKSPACE</div>
+  <nav class="nav">
+    <button class="nav-item active" data-view="home"><span class="nav-icon">▦</span>Overview</button>
+    <button class="nav-item" data-view="ai"><span class="nav-icon ai-icon">✳</span>Frostiee AI<span class="nav-pill">NEW</span></button>
+    <button class="nav-item" data-view="files"><span class="nav-icon">▤</span>Files<span class="nav-count" id="file-count">0</span></button>
+    <button class="nav-item" data-view="tasks"><span class="nav-icon">☷</span>Tasks<span class="nav-count" id="task-count">0</span></button>
+    <button class="nav-item" data-view="notes"><span class="nav-icon">✎</span>Second Brain</button>
+    <button class="nav-item" data-view="bookmarks"><span class="nav-icon">↗</span>Bookmarks</button>
+    <button class="nav-item" data-view="projects"><span class="nav-icon">◇</span>Projects</button>
+  </nav>
+  <div class="sidebar-bottom">
+    <div class="storage-card"><div class="storage-top"><span>YOUR LIBRARY</span><span>LOCAL</span></div><div class="storage-bar"><i></i></div><small>Files stay on this device in this preview</small></div>
+    <button class="nav-item" data-view="settings"><span class="nav-icon">⚙</span>Settings</button>
+    <div class="profile"><div class="profile-avatar">F</div><div><b>Frostiee</b><small>Personal account</small></div><span class="profile-dots">···</span></div>
   </div>
-  <div class="toast" id="toast" role="status"></div>
-  <script src="app.js"></script>
-</body>
-</html>
+</aside>
+<main class="main">
+<header class="topbar"><div class="mobile-brand">frostiee<span>OS</span></div><div class="breadcrumb">Workspace <span>/</span> <b id="crumb">Overview</b></div><div class="top-actions"><label class="global-search"><span>⌕</span><input id="global-search" type="search" placeholder="Search your workspace"><kbd>⌘ K</kbd></label><button class="icon-button" title="Notifications">♧</button><div class="top-avatar">F</div></div></header>
+<section class="content" id="content" aria-live="polite"></section>
+<footer class="footer"><span>FROSTIEE OS <b>STUDIO PREVIEW 0.2</b></span><span>Made of ideas <i>✳</i></span></footer>
+</main>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<input id="file-picker" type="file" multiple hidden accept=".pdf,.doc,.docx,.txt,.md,.ppt,.pptx,.csv,.xls,.xlsx,.png,.jpg,.jpeg">
+<script src="app.js"></script>
+</body></html>
