@@ -1,42 +1,9 @@
 <!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#101a2d">
-<meta name="description" content="Frostiee OS — a personal creative workspace.">
-<link rel="manifest" href="manifest.webmanifest">
-<link rel="stylesheet" href="style.css">
-<title>Frostiee OS — Workspace</title>
-</head>
-<body>
-<div class="app-shell">
-<aside class="sidebar" id="sidebar">
-  <a class="brand" href="#" data-go="home"><span class="brand-mark">f.</span><span>frostiee<span class="brand-light">OS</span></span></a>
-  <div class="workspace-switch"><span class="workspace-icon">✳</span><span><b>Personal workspace</b><small>YOUR CREATIVE HQ</small></span><span class="switch-arrow">⌄</span></div>
-  <div class="nav-label">WORKSPACE</div>
-  <nav class="nav">
-    <button class="nav-item active" data-view="home"><span class="nav-icon">▦</span>Overview</button>
-    <button class="nav-item" data-view="ai"><span class="nav-icon ai-icon">✳</span>Frostiee AI<span class="nav-pill">NEW</span></button>
-    <button class="nav-item" data-view="files"><span class="nav-icon">▤</span>Files<span class="nav-count" id="file-count">0</span></button>
-    <button class="nav-item" data-view="tasks"><span class="nav-icon">☷</span>Tasks<span class="nav-count" id="task-count">0</span></button>
-    <button class="nav-item" data-view="notes"><span class="nav-icon">✎</span>Second Brain</button>
-    <button class="nav-item" data-view="bookmarks"><span class="nav-icon">↗</span>Bookmarks</button>
-    <button class="nav-item" data-view="projects"><span class="nav-icon">◇</span>Projects</button>
-  </nav>
-  <div class="sidebar-bottom">
-    <div class="storage-card"><div class="storage-top"><span>YOUR LIBRARY</span><span>LOCAL</span></div><div class="storage-bar"><i></i></div><small>Files stay on this device in this preview</small></div>
-    <button class="nav-item" data-view="settings"><span class="nav-icon">⚙</span>Settings</button>
-    <div class="profile"><div class="profile-avatar">F</div><div><b>Frostiee</b><small>Personal account</small></div><span class="profile-dots">···</span></div>
-  </div>
-</aside>
-<main class="main">
-<header class="topbar"><div class="mobile-brand">frostiee<span>OS</span></div><div class="breadcrumb">Workspace <span>/</span> <b id="crumb">Overview</b></div><div class="top-actions"><label class="global-search"><span>⌕</span><input id="global-search" type="search" placeholder="Search your workspace"><kbd>⌘ K</kbd></label><button class="icon-button" title="Notifications">♧</button><div class="top-avatar">F</div></div></header>
-<section class="content" id="content" aria-live="polite"></section>
-<footer class="footer"><span>FROSTIEE OS <b>STUDIO PREVIEW 0.2</b></span><span>Made of ideas <i>✳</i></span></footer>
-</main>
-</div>
-<div class="toast" id="toast" role="status"></div>
-<input id="file-picker" type="file" multiple hidden accept=".pdf,.doc,.docx,.txt,.md,.ppt,.pptx,.csv,.xls,.xlsx,.png,.jpg,.jpeg">
-<script src="app.js"></script>
-</body></html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#edf3f6"><meta name="description" content="Frostiee OS — your creative workspace."><link rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="style.css"><title>Frostiee OS — Creative workspace</title></head>
+<body><div class="app-shell">
+<header class="masthead"><a class="brand" href="#" data-go="home"><span class="brand-symbol">f<span>✳</span></span><span class="brand-name">frostiee<span>OS</span></span></a>
+<nav class="main-nav" aria-label="Workspace"><button class="nav-item active" data-view="home">Home</button><button class="nav-item" data-view="ai">Frostiee AI <i>✳</i></button><button class="nav-item" data-view="files">Files <small id="file-count">0</small></button><button class="nav-item" data-view="tasks">Tasks <small id="task-count">0</small></button><button class="nav-item" data-view="notes">Notes</button><button class="nav-item" data-view="bookmarks">Saved</button><button class="nav-item" data-view="projects">Spaces</button></nav>
+<div class="mast-actions"><label class="global-search"><span>⌕</span><input id="global-search" type="search" placeholder="Search"><kbd>⌘ K</kbd></label><button class="avatar" title="Frostiee profile">F</button></div></header>
+<div class="workspace-strip"><span class="live-dot"></span> PERSONAL WORKSPACE <span class="strip-divider">/</span><span id="crumb">Home</span><span class="strip-right">STUDIO EDITION <b>✳</b></span></div>
+<main class="main"><section class="content" id="content" aria-live="polite"></section></main><footer class="footer"><span>FROSTIEE OS <b>AN INDEPENDENT WORKSPACE</b></span><span>MAKE SPACE FOR IDEAS <i>✳</i></span></footer></div>
+<div class="toast" id="toast" role="status"></div><input id="file-picker" type="file" multiple hidden accept=".pdf,.doc,.docx,.txt,.md,.ppt,.pptx,.csv,.xls,.xlsx,.png,.jpg,.jpeg"><script src="app.js"></script></body></html>
